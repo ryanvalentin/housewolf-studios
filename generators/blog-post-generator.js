@@ -30,10 +30,10 @@ module.exports = plop => {
       }
     ],
     actions: data => {
-      // Get current date
+            // Get current date
       data.createdDate = new Date().toISOString().split('T')[0];
 
-      // Parse tags as yaml array
+            // Parse tags as yaml array
       if (data.tags) {
         data.tags = `\ntags:\n  - ${data.tags.split(',').join('\n  - ')}`;
       }

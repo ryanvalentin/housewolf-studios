@@ -5,17 +5,30 @@
     ],
     "jsRules": {},
     "rules": {
-        "interface-name": [ "never-prefix" ],
-        "member-access": [
-            false
+        "interface-name": [
+            true,
+            "never-prefix"
         ],
-        "ordered-imports": [
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
+        "max-line-length": [
+            true,
+            140
+        ],
+        "member-access": [
             false
         ],
         "no-console": [
             false
         ],
-        "no-var-requires": false
+        "no-var-requires": false,
+        "quotemark": [
+            true,
+            "single"
+        ]
     },
     "rulesDirectory": []
 }

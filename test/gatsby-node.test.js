@@ -15,126 +15,126 @@ describe('gatsby-node', () => {
 
     it('should create blog posts', () => {
       graphql.mockReturnValueOnce(
-        Promise.resolve(
-          {
-            data: {
-              posts: {
-                edges: [
+                Promise.resolve(
                   {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-04-18--welcoming/'
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-05-02--article-2/'
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-05-02--article-1/'
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/docs/dont-take-me/'
+                    data: {
+                      posts: {
+                        edges: [
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-04-18--welcoming/'
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-05-02--article-2/'
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-05-02--article-1/'
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/docs/dont-take-me/'
+                              }
+                            }
+                          }
+                        ]
                       }
                     }
                   }
-                ]
-              }
-            }
-          }
-        )
-      );
+                )
+            );
 
       return createPages({graphql, boundActionCreators})
-        .then(() => {
-          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
-        });
+                .then(() => {
+                  expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
+                });
     });
 
     it('should throw an error on graphql error', () => {
       graphql.mockReturnValueOnce(
-        Promise.resolve({errors: 'something wrong!'})
-      );
+                Promise.resolve({errors: 'something wrong!'})
+            );
 
       expect(createPages({graphql, boundActionCreators}))
-        .toThrow();
+                .toThrow();
     });
 
     it('should create tags pages', () => {
       graphql.mockReturnValueOnce(
-        Promise.resolve(
-          {
-            data: {
-              posts: {
-                edges: [
+                Promise.resolve(
                   {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-04-18--welcoming/'
-                      },
-                      frontmatter: {
-                        tags: [
-                          'starter',
-                          'gatsby'
+                    data: {
+                      posts: {
+                        edges: [
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-04-18--welcoming/'
+                              },
+                              frontmatter: {
+                                tags: [
+                                  'starter',
+                                  'gatsby'
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-05-02--article-2/'
+                              },
+                              frontmatter: {
+                                tags: [
+                                  'test'
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-05-02--article-1/'
+                              },
+                              frontmatter: {
+                                tags: [
+                                  'test'
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            node: {
+                              fields: {
+                                slug: '/blog/2017-05-02--article-0/'
+                              },
+                              frontmatter: {
+                                tags: null
+                              }
+                            }
+                          }
                         ]
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-05-02--article-2/'
-                      },
-                      frontmatter: {
-                        tags: [
-                          'test'
-                        ]
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-05-02--article-1/'
-                      },
-                      frontmatter: {
-                        tags: [
-                          'test'
-                        ]
-                      }
-                    }
-                  },
-                  {
-                    node: {
-                      fields: {
-                        slug: '/blog/2017-05-02--article-0/'
-                      },
-                      frontmatter: {
-                        tags: null
                       }
                     }
                   }
-                ]
-              }
-            }
-          }
-        )
-      );
+                )
+            );
 
       return createPages({graphql, boundActionCreators})
-        .then(() => {
-          expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
-        });
+                .then(() => {
+                  expect(boundActionCreators.createPage.mock.calls).toMatchSnapshot();
+                });
     });
 
     describe('pagination', () => {
@@ -153,31 +153,31 @@ describe('gatsby-node', () => {
       it('should create 1 page with 5 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(5)));
         return createPages({graphql, boundActionCreators})
-          .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
-              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
-            expect(pages).toMatchSnapshot();
-          });
+                    .then(() => {
+                      const pages = boundActionCreators.createPage.mock.calls
+                            .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+                      expect(pages).toMatchSnapshot();
+                    });
       });
 
       it('should create 2 pages with 15 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(15)));
         return createPages({graphql, boundActionCreators})
-          .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
-              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
-            expect(pages).toMatchSnapshot();
-          });
+                    .then(() => {
+                      const pages = boundActionCreators.createPage.mock.calls
+                            .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+                      expect(pages).toMatchSnapshot();
+                    });
       });
 
       it('should create 3 pages with 30 posts', () => {
         graphql.mockReturnValueOnce(Promise.resolve(generateData(30)));
         return createPages({graphql, boundActionCreators})
-          .then(() => {
-            const pages = boundActionCreators.createPage.mock.calls
-              .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
-            expect(pages).toMatchSnapshot();
-          });
+                    .then(() => {
+                      const pages = boundActionCreators.createPage.mock.calls
+                            .filter(d => d[0].path && d[0].path.startsWith('/blog/page/'));
+                      expect(pages).toMatchSnapshot();
+                    });
       });
     });
   });
@@ -195,7 +195,7 @@ describe('gatsby-node', () => {
         {
           relativePath: 'blog/2017-04-18--welcoming/index.md'
         }
-      );
+            );
       const node = {
         internal: {
           type: 'MarkdownRemark'
@@ -212,7 +212,7 @@ describe('gatsby-node', () => {
         {
           relativePath: 'blog/2017-04-18--welcoming/index.md'
         }
-      );
+            );
       const node = {
         internal: {
           type: 'unknown'

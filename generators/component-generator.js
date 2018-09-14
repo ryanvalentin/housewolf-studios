@@ -33,7 +33,7 @@ const propsPrompts = [];
       message: 'Props is required?',
       when: data => data._props
     }
-  );
+    );
 });
 
 module.exports = plop => {
@@ -77,35 +77,41 @@ module.exports = plop => {
       }
     ],
     actions: data => {
-      // Parse data for easy templating
+            // Parse data for easy templating
       data = unflatten(data);
       data.props = data.props || [];
       data.haveRequiredProps = data.props.reduce(
-        (mem, prop) => mem || prop.required,
-        false
-      );
+                (mem, prop) => mem || prop.required,
+                false
+            );
 
       data.props = data.props.map(prop =>
-        Object.assign({}, prop, {optional: !prop.required})
-      );
+                Object.assign({}, prop, {optional: !prop.required})
+            );
 
       const basePath = data.files.length ?
-        '../src/components/{{pascalCase name}}/' :
-        '../src/components/';
+                '../src/components/{{pascalCase name}}/' :
+                '../src/components/';
 
       const actions = [];
 
       [
-        {condition: 'component', actions: [
-          {path: `${basePath}{{pascalCase name}}.tsx`, templateFile: 'templates/component-tsx.template'}
-        ]},
-        {condition: 'test', actions: [
-          {path: `${basePath}{{pascalCase name}}.test.tsx`, templateFile: 'templates/component-test-tsx.template'}
-        ]},
-        {condition: 'stories', actions: [
-          {path: `${basePath}{{pascalCase name}}.stories.tsx`, templateFile: 'templates/component-stories-tsx.template'},
-          {path: `${basePath}README.md`, templateFile: 'templates/component-readme-md.template'}
-        ]}
+        {
+          condition: 'component', actions: [
+                        {path: `${basePath}{{pascalCase name}}.tsx`, templateFile: 'templates/component-tsx.template'}
+          ]
+        },
+        {
+          condition: 'test', actions: [
+                        {path: `${basePath}{{pascalCase name}}.test.tsx`, templateFile: 'templates/component-test-tsx.template'}
+          ]
+        },
+        {
+          condition: 'stories', actions: [
+                        {path: `${basePath}{{pascalCase name}}.stories.tsx`, templateFile: 'templates/component-stories-tsx.template'},
+                        {path: `${basePath}README.md`, templateFile: 'templates/component-readme-md.template'}
+          ]
+        }
       ].forEach(a => {
         if (data.files.includes(a.condition)) {
           a.actions.forEach(i => {
