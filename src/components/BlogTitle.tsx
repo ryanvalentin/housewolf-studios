@@ -7,9 +7,9 @@ export default () => {
             <Header as='h2'>
                 <Icon name='newspaper' />
                 <Header.Content>
-                    Blog
+                    Development Blog
                 <Header.Subheader>
-                    All about this starter kit
+                    The day-to-day grind.
                 </Header.Subheader>
                 </Header.Content>
             </Header>

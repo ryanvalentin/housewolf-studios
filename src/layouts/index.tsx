@@ -10,8 +10,11 @@ import '../css/semantic.min.css';
 import '../css/styles.css';
 import { store } from '../store';
 
+const YEAR: number = new Date().getFullYear();
+
 export const menuItems = [
     { name: 'Home', path: '/', exact: true, icon: 'home', inverted: true },
+    { name: 'Games', path: '/games/', exact: true, icon: 'gamepad' },
     { name: 'About', path: '/about/', exact: true, icon: 'info circle' },
     { name: 'Blog', path: '/blog/', exact: false, icon: 'newspaper' },
 ];
@@ -36,11 +39,11 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
 
                     <Sidebar.Pusher style={{ minHeight: '100vh' }}>
                         {/* Header */}
-                        {isHome ? null : <HeaderMenu
+                        <HeaderMenu
                             Link={Link}
                             pathname={pathname}
                             items={menuItems}
-                        />}
+                        />
 
                         {/* Render children pages */}
                         <div style={{ paddingBottom: 60 }}>
@@ -50,7 +53,7 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
                         {/* Footer */}
                         <Segment inverted vertical style={{ position: 'absolute', bottom: 0, width: '100%' }}>
                             <Container textAlign='center'>
-                                <p>Powered with <Icon name='heart' /> by Gatsby 1.0</p>
+                                <p>Copyright {YEAR} Housewolf Studios</p>
                             </Container>
                         </Segment>
                     </Sidebar.Pusher>
