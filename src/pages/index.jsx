@@ -4,15 +4,27 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import { Header, Segment, Container, Button } from 'semantic-ui-react';
 
+import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
+
 const IndexPage = ({ location }) => (
-    <Layout location={location}>
+    <Layout location={location} secondaryHeader={true}>
         <Segment
             inverted={true}
-            textAlign="center"
-            style={{ minHeight: 700, padding: '20rem 0' }}
             vertical={true}
+            textAlign="center"
+            style={{
+                minHeight: 700,
+                padding: '20rem 0',
+                backgroundImage: `url(${KnightsSkyHeroImage})`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+            }}
+
         >
-            <Container text={true}>
+            <Container
+                text={true}
+            >
                 <Header
                     as="h1"
                     content="Knight's Sky"

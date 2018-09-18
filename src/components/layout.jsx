@@ -11,7 +11,7 @@ import './overrides.css';
 
 const YEAR = new Date().getFullYear();
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, secondaryHeader }) => (
     <StaticQuery
         query={graphql`
       query SiteTitleQuery {
@@ -34,22 +34,35 @@ const Layout = ({ children, location }) => (
                     <html lang="en" />
                 </Helmet>
 
-                <Header title={data.site.siteMetadata.title} pathname={location ? location.pathname : null} />
+                <Header
+                    title={data.site.siteMetadata.title}
+                    pathname={location ? location.pathname : null}
+                    secondary={secondaryHeader}
+                />
 
                 {/* Content Wrapper */}
                 <Segment
-                    inverted={true}
-                    textAlign="center"
-                    style={{ minHeight: 700 }}
-                    vertical={true}
+                    style={{
+                        border: 0,
+                        padding: 0,
+                        margin: 0,
+                    }}
                 >
                     {children}
                 </Segment>
 
                 {/* Footer */}
-                <Segment inverted vertical style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+                <Segment
+                    inverted={true}
+                    vertical={true}
+                    style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        width: '100%',
+                    }}
+                >
                     <Container textAlign='center'>
-                        <p>Copyright {YEAR} Housewolf Studios</p>
+                        <p>Copyright {YEAR} {data.site.siteMetadata.title}</p>
                     </Container>
                 </Segment>
             </Responsive>
