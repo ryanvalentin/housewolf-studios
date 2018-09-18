@@ -1,18 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Menu, Container } from 'semantic-ui-react';
+import { Menu, Container, Image } from 'semantic-ui-react';
 import HousewolfIcon from '../images/housewolf-icon.png';
 
 const Header = ({ title, pathname, secondary }) => {
     const menuLinks = [
         {
-            pathname: '/',
-            label: title,
-            icon: HousewolfIcon,
-        },
-        {
-            pathname: '/games',
-            label: 'Games',
+            pathname: `/`,
+            label: `Knight's Sky`,
         },
         {
             pathname: '/about',
@@ -27,11 +22,24 @@ const Header = ({ title, pathname, secondary }) => {
             pointing={true}
             secondary={true}
             size="large"
+            style={{
+                border: 0,
+            }}
         >
             <Container>
+                <Menu.Item>
+                    <Image src={HousewolfIcon} avatar={true} alt={title} />
+                </Menu.Item>
                 {menuLinks.map((item) => (
-                    <Menu.Item key={item.pathname} as={Link} to={item.pathname} active={item.pathname === pathname}>
-                        {/* item.icon ? <img src={item.icon} /> : null */}
+                    <Menu.Item
+                        key={item.pathname}
+                        as={Link}
+                        to={item.pathname}
+                        active={item.pathname === pathname}
+                        style={{
+                            alignSelf: 'center',
+                        }}
+                    >
                         {item.label}
                     </Menu.Item>
                 ))}

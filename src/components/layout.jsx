@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { Segment, Container, Responsive } from 'semantic-ui-react';
 
-import Header from './header';
+import Header from './Header';
 
 import 'semantic-ui-css/semantic.min.css';
 import './overrides.css';
@@ -56,8 +56,6 @@ const Layout = ({ children, location, secondaryHeader }) => (
                     inverted={true}
                     vertical={true}
                     style={{
-                        position: 'absolute',
-                        bottom: 0,
                         width: '100%',
                     }}
                 >
