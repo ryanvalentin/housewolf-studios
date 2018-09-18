@@ -1,12 +1,6 @@
 import React from 'react';
 import { Item } from 'semantic-ui-react';
 
-const NewsFeed = ({ items }) => (
-    <Item.Group divided={true} relaxed={true}>
-        {items.map((item) => <Post key={item.id} {...item} />)}
-    </Item.Group>
-);
-
 const Post = ({ title, date, content }) => (
     <Item>
         <Item.Content>
@@ -25,6 +19,10 @@ const Post = ({ title, date, content }) => (
     </Item>
 );
 
-NewsFeed.Post = Post;
+const NewsFeed = ({ items }) => (
+    <Item.Group divided={true} relaxed={true}>
+        {items.map((item) => <Post key={item.id} {...item} />)}
+    </Item.Group>
+);
 
 export default NewsFeed;

@@ -56,7 +56,7 @@ const IndexPage = ({ location }) => (
                 />
                 <Header
                     as="h3"
-                    content="Survive the deadly skies of Western Europe in the Luftwaffe."
+                    content="Survive the deadly skies of Europe in the Luftwaffe."
                     inverted={true}
                 />
             </Container>
