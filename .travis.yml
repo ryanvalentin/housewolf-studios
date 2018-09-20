@@ -4,8 +4,4 @@ branches:
       - master
 node_js:
   - "8"
-script: npm run-script deploy
-env:
-  global:
-    - GH_REF: github.com/ryanvalentin/housewolf-studio.git
-    - secure: $GITHUB_PERSONAL_TOKEN
+script: npm run-script deploy:travis

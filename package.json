@@ -23,6 +23,7 @@
         "build": "gatsby build",
         "develop": "gatsby develop",
         "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+        "deploy:travis": "gatsby build --prefix-paths && gh-pages --repo https://$GITHUB_PERSONAL_TOKEN@github.com/ryanvalentin/housewolf-studio.git -d public",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
