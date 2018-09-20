@@ -5,7 +5,7 @@ const SOCIAL_NETWORKS = [
     {
         id: 'youtube',
         name: 'YouTube',
-        link: '',
+        link: 'https://www.youtube.com/channel/UC9VnSVWra_Z1t0hmGI6Jokg',
     },
     {
         id: 'twitter',
@@ -15,7 +15,7 @@ const SOCIAL_NETWORKS = [
     {
         id: 'facebook',
         name: 'Facebook',
-        link: '',
+        link: 'https://www.facebook.com/Knights-Sky-312713625945576/',
     },
 ];
 
