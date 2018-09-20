@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import { Header, Segment, Container } from 'semantic-ui-react';
 
 import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
