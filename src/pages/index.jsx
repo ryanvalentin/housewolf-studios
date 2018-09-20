@@ -4,8 +4,8 @@ import Layout from '../components/layout';
 import { Header, Segment, Container } from 'semantic-ui-react';
 
 import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
-import NewsFeed from '../components/NewsFeed';
-import Social from '../components/Social';
+import NewsFeed from '../components/newsfeed';
+import Social from '../components/social';
 
 const FEED_ITEMS = [
     {

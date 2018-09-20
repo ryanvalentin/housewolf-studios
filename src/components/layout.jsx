@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { Segment, Container, Responsive } from 'semantic-ui-react';
 
-import Header from './Header';
+import Header from './header';
 
 import 'semantic-ui-css/semantic.min.css';
 import './overrides.css';
