@@ -3,7 +3,10 @@ module.exports = {
         title: 'Housewolf Studio',
     },
     plugins: [
+        // Gatsby React Helmet Plugin
         'gatsby-plugin-react-helmet',
+
+        // Gatsby Manifest Plugin
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -16,6 +19,20 @@ module.exports = {
                 icon: 'src/images/housewolf-icon.png', // This path is relative to the root of the site.
             },
         },
+
+        // Gatsby Offline Plugin
         'gatsby-plugin-offline',
+
+        // Gatsby Filesystem Source
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/posts`,
+                name: 'posts',
+            },
+        },
+
+        // Gatsby Markdown Transformer
+        'gatsby-transformer-remark',
     ],
 };

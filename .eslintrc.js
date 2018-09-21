@@ -6,7 +6,9 @@ module.exports = {
     env: {
         'node': true
     },
-    globals: {},
+    globals: {
+        Promise: true,
+    },
     plugins: [
         'import',
         'jsx-a11y',
