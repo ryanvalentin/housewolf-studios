@@ -1,28 +1,37 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Item } from 'semantic-ui-react';
 
-const Post = ({ title, date, content }) => (
+const Post = ({ post }) => (
     <Item>
         <Item.Content>
             <Item.Header
-                as="a"
+                as={Link}
+                to={post.frontmatter.path}
             >
-                {title}
+                {post.frontmatter.title}
             </Item.Header>
             <Item.Meta>
-                {date}
+                {post.frontmatter.date}
             </Item.Meta>
             <Item.Description>
-                {content}
+                {post.excerpt}
             </Item.Description>
         </Item.Content>
     </Item>
 );
 
-const NewsFeed = ({ items }) => (
-    <Item.Group divided={true} relaxed={true}>
-        {items.map((item) => <Post key={item.id} {...item} />)}
-    </Item.Group>
-);
+const NewsFeed = ({
+    data: {
+        allMarkdownRemark: { edges },
+    },
+}) => (
+        <Item.Group divided={true} relaxed={true}>
+            {edges
+                .filter((edge) => Boolean(edge.node.frontmatter.date)) // Filter using any criteria
+                .map((edge) => <Post key={edge.node.id} post={edge.node} />)
+            }
+        </Item.Group>
+    );
 
 export default NewsFeed;
