@@ -15,4 +15,4 @@ Of course the most interesting story means nothing if the game isn't fun to play
 
 While we plan on releasing this exclusively as a virtual reality game, we're not completely sure which hardware will be supported. Currently it's being developed on an Oculus Rift, but that can change as new types of hardware come into the fray.
 
-Be sure to find and follow us below on Twitter, YouTube, or Facebook to stay updated!
+Be sure to find and follow us on [Twitter](https://twitter.com/KnightsSkyGame), [YouTube](https://www.youtube.com/channel/UC9VnSVWra_Z1t0hmGI6Jokg), or [Facebook](https://www.facebook.com/Knights-Sky-312713625945576/) to stay updated!
