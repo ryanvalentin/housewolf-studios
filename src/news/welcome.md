@@ -2,7 +2,6 @@
 path: "/news/welcome"
 date: "2018-09-22"
 title: "Welcome!"
-comments: true
 ---
 
 This is our first post here at Housewolf Studio. We're currently working on a new VR flying game set during World War II: **Knight's Sky**. It will feature a single-player campaign where you assume the role of a young Luftwaffe pilot. The story is still being worked on, but it will generally begin early/mid-war through the terminal phase of the war. You'll experience the increasing attrition and insurmountable odds faced by the German fighter pilots throughout this time.

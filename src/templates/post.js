@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Container, Header, Divider, Segment } from 'semantic-ui-react';
+import { DiscussionEmbed } from 'disqus-react';
 import Layout from '../components/layout';
 
 export default function Template({ data }) {
     const { markdownRemark } = data; // data.markdownRemark holds our post data
-    const { frontmatter, html } = markdownRemark;
+    const { id, frontmatter, html } = markdownRemark;
 
     return (
         <Layout location={frontmatter.path}>
@@ -22,6 +23,14 @@ export default function Template({ data }) {
                     </Header>
                     <Divider />
                     <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <Divider />
+                    <DiscussionEmbed
+                        shortname="housewolf"
+                        config={{
+                            identifier: id,
+                            title: frontmatter.title,
+                        }}
+                    />
                 </Container>
             </Segment>
         </Layout>
@@ -31,6 +40,7 @@ export default function Template({ data }) {
 export const pageQuery = graphql`
     query($path: String!) {
         markdownRemark(frontmatter: { path: { eq: $path }}) {
+            id
             html
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
