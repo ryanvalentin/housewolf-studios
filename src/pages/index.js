@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import { Header, Segment, Container } from 'semantic-ui-react';
@@ -7,28 +8,7 @@ import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
 import NewsFeed from '../components/newsfeed';
 import Social from '../components/social';
 
-const FEED_ITEMS = [
-    {
-        id: 1,
-        title: 'Post 1',
-        content: 'Here is our first post',
-        date: new Date().toDateString(),
-    },
-    {
-        id: 2,
-        title: 'Post 2',
-        content: 'Here is our second post',
-        date: new Date().toDateString(),
-    },
-    {
-        id: 3,
-        title: 'Post 3',
-        content: 'Here is our third post',
-        date: new Date().toDateString(),
-    },
-];
-
-const IndexPage = ({ location }) => (
+const IndexPage = ({ data, location }) => (
     <Layout location={location} secondaryHeader={true}>
 
         {/* Hero Image */}
@@ -73,7 +53,7 @@ const IndexPage = ({ location }) => (
                     as="h2"
                     content="Latest News"
                 />
-                <NewsFeed items={FEED_ITEMS} />
+                <NewsFeed data={data} />
             </Container>
         </Segment>
 
@@ -98,3 +78,21 @@ const IndexPage = ({ location }) => (
 );
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+    query {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            edges {
+                node {
+                    id
+                    excerpt(pruneLength: 250)
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        path
+                        title
+                    }
+                }
+            }
+        }
+    }
+`;
