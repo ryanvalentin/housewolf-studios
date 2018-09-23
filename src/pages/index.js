@@ -9,7 +9,7 @@ import NewsFeed from '../components/newsfeed';
 import Social from '../components/social';
 
 const IndexPage = ({ data, location }) => (
-    <Layout location={location} secondaryHeader={true}>
+    <Layout location={location} transparentHeader={true}>
 
         {/* Hero Image */}
         <Segment
@@ -23,8 +23,9 @@ const IndexPage = ({ data, location }) => (
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
+                border: 0,
+                margin: 0,
             }}
-
         >
             <Container
                 text={true}

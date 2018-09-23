@@ -11,7 +11,7 @@ import './overrides.css';
 
 const YEAR = new Date().getFullYear();
 
-const Layout = ({ children, location, secondaryHeader }) => (
+const Layout = ({ children, location, transparentHeader }) => (
     <StaticQuery
         query={graphql`
       query SiteTitleQuery {
@@ -37,19 +37,11 @@ const Layout = ({ children, location, secondaryHeader }) => (
                 <Header
                     title={data.site.siteMetadata.title}
                     pathname={location ? location.pathname : null}
-                    secondary={secondaryHeader}
+                    transparent={transparentHeader}
                 />
 
-                {/* Content Wrapper */}
-                <Segment
-                    style={{
-                        border: 0,
-                        padding: 0,
-                        margin: 0,
-                    }}
-                >
-                    {children}
-                </Segment>
+                {/* Content */}
+                {children}
 
                 {/* Footer */}
                 <Segment

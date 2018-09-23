@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { Menu, Container, Image } from 'semantic-ui-react';
 import HousewolfIcon from '../images/housewolf-icon.png';
 
-const Header = ({ title, pathname, secondary }) => {
+const Header = ({ title, pathname, transparent }) => {
     const menuLinks = [
         {
             pathname: `/`,
@@ -18,12 +18,13 @@ const Header = ({ title, pathname, secondary }) => {
     return (
         <Menu
             fixed="top"
-            inverted={secondary}
+            inverted={true}
             pointing={true}
             secondary={true}
             size="large"
             style={{
                 border: 0,
+                background: transparent ? null : '#a63629',
             }}
         >
             <Container>

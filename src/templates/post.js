@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Container, Header, Divider, Segment } from 'semantic-ui-react';
 import Layout from '../components/layout';
 
 export default function Template({ data }) {
@@ -7,12 +8,22 @@ export default function Template({ data }) {
     const { frontmatter, html } = markdownRemark;
 
     return (
-        <Layout>
-            <div>
-                <h1>{frontmatter.title}</h1>
-                <h2>{frontmatter.date}</h2>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
-            </div>
+        <Layout location={frontmatter.path}>
+            <Segment
+                basic={true}
+                style={{
+                    margin: '7em 0',
+                }}
+            >
+                <Container text={true}>
+                    <Header as="h1">
+                        {frontmatter.title}
+                        <Header.Subheader>{frontmatter.date}</Header.Subheader>
+                    </Header>
+                    <Divider />
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                </Container>
+            </Segment>
         </Layout>
     );
 }
