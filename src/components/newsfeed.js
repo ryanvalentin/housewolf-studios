@@ -16,6 +16,8 @@ const Post = ({ post }) => (
             </Item.Meta>
             <Item.Description>
                 {post.excerpt}
+                <br />
+                <Link to={post.frontmatter.path}>Read More</Link>
             </Item.Description>
         </Item.Content>
     </Item>
