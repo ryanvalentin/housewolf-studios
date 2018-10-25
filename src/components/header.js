@@ -7,6 +7,10 @@ const Header = ({ title, pathname, transparent }) => {
     const menuLinks = [
         {
             pathname: `/`,
+            label: `Home`,
+        },
+        {
+            pathname: `/knights-sky`,
             label: `Knight's Sky`,
         },
         {
