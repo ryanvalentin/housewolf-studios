@@ -13,9 +13,9 @@ const SOCIAL_NETWORKS = [
         link: 'https://twitter.com/KnightsSkyGame',
     },
     {
-        id: 'facebook',
-        name: 'Facebook',
-        link: 'https://www.facebook.com/Knights-Sky-312713625945576/',
+        id: 'discord',
+        name: 'Discord',
+        link: 'https://discord.gg/ypUPPKa',
     },
 ];
 
