@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Housewolf Studio',
+        title: 'Housewolf Studios',
     },
     plugins: [
         // Gatsby React Helmet Plugin
