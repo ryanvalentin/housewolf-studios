@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Menu, Container, Image } from 'semantic-ui-react';
-import HousewolfIcon from '../images/housewolf-icon.png';
+import HousewolfLogo from '../images/housewolf-logo.svg';
 
 const Header = ({ title, pathname, transparent }) => {
     const menuLinks = [
@@ -33,7 +33,7 @@ const Header = ({ title, pathname, transparent }) => {
         >
             <Container>
                 <Menu.Item>
-                    <Image src={HousewolfIcon} avatar={true} alt={title} />
+                    <Image src={HousewolfLogo} avatar={true} alt={title} />
                 </Menu.Item>
                 {menuLinks.map((item) => (
                     <Menu.Item
