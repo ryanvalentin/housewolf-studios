@@ -1,36 +1,57 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { Header, Segment, Container, Item } from 'semantic-ui-react';
+import { Header, Segment, Container, Image } from 'semantic-ui-react';
 
 import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
+import KnightsSkyIcon from '../images/knights-sky-icon.png';
 import NewsFeed from '../components/NewsFeed';
 
 const IndexPage = ({ data, location }) => (
     <Layout location={location}>
+        {/* Hero Image */}
         <Segment
-            padded="very"
+            inverted={true}
             vertical={true}
+            textAlign="center"
+            style={{
+                minHeight: 700,
+                padding: '20rem 0',
+                backgroundImage: `url(${KnightsSkyHeroImage})`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                border: 0,
+                margin: 0,
+            }}
         >
-            <Container text={true}>
-                <Header
-                    as="h2"
-                    content="Current Projects"
+            <Container
+                text={true}
+            >
+                <Image
+                    src={KnightsSkyIcon}
+                    circular={true}
+                    centered={true}
+                    size="small"
+                    style={{
+                        border: '.3rem solid black',
+                    }}
                 />
-                <Item.Group link={true}>
-                    <Item
-                        as={Link}
-                        to="/knights-sky"
-                        image={KnightsSkyHeroImage}
-                        header="Knight's Sky"
-                        description="Survive the deadly skies above Europe in the Luftwaffe"
-                        meta="Coming soon for PC VR"
-                    />
-                </Item.Group>
+                <Header
+                    as="h1"
+                    content="Knight's Sky"
+                    inverted={true}
+                />
+                <Header
+                    as="h3"
+                    content="Survive the deadly skies above Europe in the Luftwaffe"
+                    inverted={true}
+                />
+                <p>Coming soon to PC VR</p>
             </Container>
-        </Segment>
 
+        </Segment>
         {/* News */}
         <Segment
             padded="very"

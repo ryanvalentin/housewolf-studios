@@ -10,7 +10,7 @@ import FollowSegment from './FollowSegment';
 import 'semantic-ui-css/semantic.min.css';
 import './overrides.css';
 
-const Layout = ({ children, location, transparentHeader }) => (
+const Layout = ({ children, location }) => (
     <StaticQuery
         query={graphql`
       query SiteTitleQuery {
@@ -36,11 +36,10 @@ const Layout = ({ children, location, transparentHeader }) => (
                 <Header
                     title={data.site.siteMetadata.title}
                     pathname={location ? location.pathname : null}
-                    transparent={transparentHeader}
                 />
 
                 {/* Content */}
-                <div style={{ marginTop: transparentHeader ? '0' : '50px' }}>
+                <div style={{ marginTop: '50px' }}>
                     {children}
                 </div>
 

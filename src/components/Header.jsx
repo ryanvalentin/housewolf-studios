@@ -2,16 +2,13 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Menu, Container, Image } from 'semantic-ui-react';
 import HousewolfLogo from '../images/housewolf-logo.svg';
+import { GERMAN_RED } from '../constants/colors';
 
-const Header = ({ title, pathname, transparent }) => {
+const Header = ({ title, pathname }) => {
     const menuLinks = [
         {
             pathname: `/`,
             label: `Home`,
-        },
-        {
-            pathname: `/knights-sky`,
-            label: `Knight's Sky`,
         },
         {
             pathname: '/about',
@@ -27,12 +24,13 @@ const Header = ({ title, pathname, transparent }) => {
             secondary={true}
             size="large"
             style={{
-                background: transparent ? null : '#a63629',
+                background: GERMAN_RED,
             }}
         >
             <Container>
-                <Menu.Item>
+                <Menu.Item as={Link} to="/">
                     <Image src={HousewolfLogo} avatar={true} alt={title} />
+                    <strong>Housewolf Studios</strong>
                 </Menu.Item>
                 {menuLinks.map((item) => (
                     <Menu.Item

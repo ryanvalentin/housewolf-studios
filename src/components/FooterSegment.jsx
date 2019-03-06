@@ -6,7 +6,6 @@ const YEAR = new Date().getFullYear();
 
 const FooterSegment = ({ title }) => (
     <Segment
-        inverted={true}
         vertical={true}
         style={{
             width: '100%',

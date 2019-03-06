@@ -6,8 +6,6 @@ import SocialIconGrid from './SocialIconGrid';
 const FollowSegment = () => (
     <Segment
         as="section"
-        color='orange'
-        secondary={true}
         inverted={true}
         padded="very"
         vertical={true}
