@@ -27,7 +27,6 @@ const Header = ({ title, pathname, transparent }) => {
             secondary={true}
             size="large"
             style={{
-                border: 0,
                 background: transparent ? null : '#a63629',
             }}
         >
@@ -42,7 +41,7 @@ const Header = ({ title, pathname, transparent }) => {
                         to={item.pathname}
                         active={item.pathname === pathname}
                         style={{
-                            alignSelf: 'center',
+                            alignSelf: 'stretch',
                         }}
                     >
                         {item.label}

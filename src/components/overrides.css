@@ -1,0 +1,3 @@
+html {
+    overflow-y: scroll; /* Fix the scrollbar so there's no shifting between pages */
+}

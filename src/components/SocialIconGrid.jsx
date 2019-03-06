@@ -19,7 +19,7 @@ const SOCIAL_NETWORKS = [
     },
 ];
 
-const Social = ({ inverted }) => (
+const SocialIconGrid = ({ inverted }) => (
     <Grid columns={3} divided={true} padded="vertically">
         <Grid.Row>
             {SOCIAL_NETWORKS.map((network) => (
@@ -40,4 +40,4 @@ const Social = ({ inverted }) => (
     </Grid>
 );
 
-export default Social;
+export default SocialIconGrid;

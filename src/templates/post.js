@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Container, Header, Divider, Segment } from 'semantic-ui-react';
 import { DiscussionEmbed } from 'disqus-react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 export default function Template({ data }) {
     const { markdownRemark } = data; // data.markdownRemark holds our post data

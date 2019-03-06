@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { Header, Segment, Container } from 'semantic-ui-react';
 
 import KnightsSkyHeroImage from '../images/knights-sky-hero.jpg';
-import Social from '../components/social';
 
 const KnightsSkyPage = ({ location }) => (
     <Layout location={location} transparentHeader={true}>
@@ -35,7 +34,7 @@ const KnightsSkyPage = ({ location }) => (
                 />
                 <Header
                     as="h3"
-                    content="Survive the deadly skies of Europe in the Luftwaffe."
+                    content="Survive the deadly skies above Europe in the Luftwaffe."
                     inverted={true}
                 />
             </Container>
@@ -44,32 +43,16 @@ const KnightsSkyPage = ({ location }) => (
 
         {/* Features */}
         <Segment
+            as="section"
             padded="very"
             vertical={true}
         >
             <Container text={true}>
                 <Header
                     as="h2"
-                    content="Features"
+                    content="Coming soon for PC VR!"
                 />
-            </Container>
-        </Segment>
-
-        {/* Follow Development */}
-        <Segment
-            color='orange'
-            secondary={true}
-            inverted={true}
-            padded="very"
-            vertical={true}
-        >
-            <Container textAlign="center">
-                <Header
-                    as="h2"
-                    content="Follow Us"
-                    inverted={true}
-                />
-                <Social inverted={true} />
+                Follow us and watch this space for updates.
             </Container>
         </Segment>
     </Layout>
