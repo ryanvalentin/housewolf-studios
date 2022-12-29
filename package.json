@@ -5,7 +5,7 @@
     "author": "Ryan Valentin <ryanvalentin@outlook.com>",
     "dependencies": {
         "disqus-react": "^1.0.5",
-        "gatsby": "^2.1.19",
+        "gatsby": "^5.3.3",
         "gatsby-plugin-manifest": "^2.0.20",
         "gatsby-plugin-offline": "^2.0.24",
         "gatsby-plugin-react-helmet": "^3.0.7",
